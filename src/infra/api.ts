@@ -1,6 +1,5 @@
 import {User} from '../Domain/entities/User';
 import {IUserRepository} from '../Domain/usesCase/searchUsers';
-import {Organization} from '../Domain/entities/Organization';
 
 export class GithubAPIAdapter implements IUserRepository {
   private BASE_URL = 'https://api.github.com';
@@ -14,7 +13,7 @@ export class GithubAPIAdapter implements IUserRepository {
       name: item.login,
       avatarUrl: item.avatar_url,
       repositories: item.repos_url,
-      organizations: item.organizations_url, // Nota: He corregido la key "Organizations_url" a "organizations_url"
+      organizations: item.organizations_url,
     }));
   }
 
