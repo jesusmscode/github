@@ -4,4 +4,5 @@ export interface User {
   avatarUrl: string;
   repositories: string;
   organizations: string;
+  personalURL: string;
 }

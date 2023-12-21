@@ -14,6 +14,7 @@ export class GithubAPIAdapter implements IUserRepository {
       avatarUrl: item.avatar_url,
       repositories: item.repos_url,
       organizations: item.organizations_url,
+      personalURL: item.html_url,
     }));
   }
 

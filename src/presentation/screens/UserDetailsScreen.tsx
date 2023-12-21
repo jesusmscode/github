@@ -6,10 +6,12 @@ import {
   FlatList,
   Image,
   ScrollView,
+  Button,
 } from 'react-native';
 import {User} from '../../domain/entities/User';
 import {useRepositories} from '../hooks/useRepositories';
 import {useOrganizations} from '../hooks/useOrganizations';
+import {useNavigation} from '@react-navigation/native';
 
 interface Props {
   route: {
@@ -20,6 +22,7 @@ interface Props {
 }
 
 export const UserDetailsScreen: React.FC<Props> = ({route}) => {
+  const navigation = useNavigation();
   const {user} = route.params;
   const {
     loading: loadingRepos,
@@ -36,6 +39,14 @@ export const UserDetailsScreen: React.FC<Props> = ({route}) => {
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Name</Text>
       <Text>{user.name}</Text>
+      <Text>Ver:</Text>
+      <Button
+        title={String(user.personalURL)}
+        /* itle={user.personaURL} */
+        onPress={() =>
+          navigation.navigate('WebUserScreen', {url: user?.personalURL})
+        }
+      />
       <Image
         testID="avatar"
         style={styles.tinyLogo}

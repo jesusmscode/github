@@ -7,8 +7,8 @@ import {UserList} from '../components/UserList';
 import {useNavigation} from '@react-navigation/native';
 
 export const UsersScreen: React.FC = () => {
-  const navigation = useNavigation();
   const repository = new GithubAPIAdapter();
+  const navigation = useNavigation();
   const {loading, error, users, searchUsers} = useUser(repository);
 
   return (
