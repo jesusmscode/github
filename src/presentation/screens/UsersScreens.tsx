@@ -15,11 +15,16 @@ export const UsersScreen: React.FC = () => {
     <View style={styles.container}>
       <SearchInput onSearch={searchUsers} />
       {loading ? (
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator
+          testID="loading-indicator"
+          size="large"
+          color="#0000ff"
+        />
       ) : error ? (
         <Text>{error.message}</Text>
       ) : (
         <UserList
+          testId="user-list"
           users={users}
           onSelectUser={selectedUser =>
             navigation.navigate('UserDetailsScreen', {user: selectedUser})

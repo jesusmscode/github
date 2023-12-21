@@ -37,6 +37,7 @@ export const UserDetailsScreen: React.FC<Props> = ({route}) => {
       <Text style={styles.title}>Name</Text>
       <Text>{user.name}</Text>
       <Image
+        testID="avatar"
         style={styles.tinyLogo}
         source={{
           uri: user.avatarUrl,
