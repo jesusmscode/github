@@ -4,7 +4,7 @@ import App from '../App';
 
 describe('App', () => {
   it('renders the correct message', () => {
-    const {getByText} = render(<App />);
-    expect(getByText('hola')).toBeTruthy();
+    const {findByText} = render(<App />);
+    expect(findByText('search')).toBeTruthy();
   });
 });
